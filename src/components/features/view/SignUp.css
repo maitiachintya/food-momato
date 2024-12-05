@@ -1,0 +1,77 @@
+.registration-container {
+  height: 100vh;
+  background-image: url("https://static.toiimg.com/thumb/msid-100825388,imgsize-1512741,width-900,height-1200,resizemode-6/100825388.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.registration-paper {
+  position: absolute;
+  top: 50%;
+  right: 10%;
+  transform: translateY(-50%);
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 420px;
+  background-color: rgba(255, 255, 255, 0.9);
+  text-align: center;
+}
+
+.registration-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.registration-title {
+  font-weight: bold;
+  color: #ff6f61;
+  margin-bottom: 10px;
+  font-size: 32px;
+}
+
+.registration-subtitle {
+  color: #ff6f61;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.input-field {
+  margin-bottom: 20px;
+}
+
+.submit-btn {
+  padding: 12px;
+  font-size: 18px;
+  background-color: #ff6f61;
+  color: white;
+  &:hover {
+    background-color: #d45746;
+  }
+}
+
+.circular-progress {
+  color: white;
+}
+
+.error-message {
+  margin-top: 20px;
+  color: red;
+  text-align: center;
+  font-size: 14px;
+}
+
+.login-link {
+  margin-top: 20px;
+  color: #ff6f61;
+}
+
+.login-link-text {
+  color: #ff6f61;
+  text-decoration: none;
+  font-weight: bold;
+}

@@ -1,0 +1,344 @@
+{
+  "users": [
+    {
+      "id": "2d1d",
+      "email": "achintyamaiti20@gmail.com",
+      "password": "Achintya@40",
+      "phone": "8972557939",
+      "fullName": "Achintya Maiti"
+    },
+    {
+      "id": "33a8",
+      "email": "raj123@gmail.com",
+      "password": "Raj@32145",
+      "phone": "",
+      "fullName": "Rajkumar Dandapatt"
+    },
+    {
+      "id": "93e1",
+      "email": "ram@gmail.com",
+      "password": "Ram@12345",
+      "phone": "",
+      "fullName": "Ram Ghosh"
+    },
+    {
+      "id": "c8c5",
+      "email": "achintyamaiti22@gmail.com",
+      "password": "Achintya@43",
+      "phone": "8972550939",
+      "fullName": "Achintya Hazra"
+    },
+    {
+      "id": "6b68",
+      "email": "achintyamaiti20@gmail.com",
+      "password": "Achintya@40",
+      "phone": "8972557939",
+      "fullName": "Achintya Maiti"
+    },
+    {
+      "id": "4640",
+      "email": "achintyamaiti20@gmail.com",
+      "password": "Achintya@40",
+      "phone": "8972557939",
+      "fullName": "Achintya Maiti"
+    },
+    {
+      "id": "999c",
+      "email": "achintyamaiti20@gmail.com",
+      "password": "Achintya@40",
+      "phone": "8972557939",
+      "fullName": "Achintya Maiti"
+    },
+    {
+      "id": "89fd",
+      "email": "achintyamaiti20@gmail.com",
+      "password": "Achintya@40",
+      "phone": "8972557939",
+      "fullName": "Achintya Maiti"
+    },
+    {
+      "id": "aca0",
+      "email": "achintyamaiti20@gmail.com",
+      "password": "Achintya@40",
+      "phone": "8972557939",
+      "fullName": "Achintya Maiti"
+    },
+    {
+      "id": "9a92",
+      "email": "achintyamaiti270@gmail.com",
+      "password": "Sadr@7654",
+      "phone": "8986557939",
+      "fullName": "Achintya Maiti"
+    },
+    {
+      "id": "fa3a",
+      "email": "moumitaahamed7860@gmail.com",
+      "password": "Mahamed@7860",
+      "phone": "",
+      "fullName": "Moumita Ahamed"
+    }
+  ],
+  "cart": [
+    {
+      "id": "1",
+      "foodItemId": 101,
+      "name": "Cheese Pizza",
+      "description": "Delicious cheese pizza with a crispy crust.",
+      "price": 12.99,
+      "quantity": 2,
+      "total": 25.98
+    },
+    {
+      "id": "2",
+      "foodItemId": 102,
+      "name": "Veggie Burger",
+      "description": "A tasty veggie burger with fresh veggies.",
+      "price": 8.99,
+      "quantity": 1,
+      "total": 8.99
+    },
+    {
+      "id": "3",
+      "foodItemId": 103,
+      "name": "French Fries",
+      "description": "Crispy and golden French fries.",
+      "price": 3.49,
+      "quantity": 3,
+      "total": 10.47
+    }
+  ],
+  "totalPrice": 45.44,
+  "totalItems": 6,
+  "orders": [
+    {
+      "id": "1",
+      "orderItem": "Paneer Pizza",
+      "orderNumber": "ORD12345",
+      "date": "2024-11-25",
+      "status": "Delivered",
+      "price": 13.99,
+      "rate": "Delicious, 377k Liked",
+      "img": "https://cdn.pixabay.com/photo/2017/12/09/08/18/pizza-3007395_1280.jpg"
+    },
+    {
+      "id": "2",
+      "orderItem": "Chicken Pizza",
+      "orderNumber": "ORD12346",
+      "date": "2024-11-26",
+      "status": "Pending",
+      "price": 13.99,
+      "rate": "Well Tested, 50k Liked",
+      "img": "https://breadboozebacon.com/wp-content/uploads/2023/05/BBQ-Chicken-Pizza-SQUARE.jpg"
+    },
+    {
+      "id": "3",
+      "orderItem": "Butter Burger",
+      "orderNumber": "ORD12347",
+      "date": "2024-11-27",
+      "status": "Shipped",
+      "price": 13.99,
+      "rate": "Masterpiece, 1000M liked",
+      "img": "https://img.freepik.com/free-photo/grilled-gourmet-burger-with-cheese-tomato-onion-french-fries-generated-by-artificial-intelligence_25030-63181.jpg?semt=ais_hybrid"
+    },
+    {
+      "id": "4",
+      "orderItem": "Chicken Cutlet",
+      "orderNumber": "ORD12348",
+      "date": "2024-11-20",
+      "status": "Pending",
+      "price": 13.99,
+      "rate": "Wonderful, 367K Liked",
+      "img": "https://www.freshtohome.com/blog/wp-content/uploads/2024/07/Screenshot-2024-07-17-184057.png"
+    },
+    {
+      "id": "5",
+      "orderItem": "Paratha",
+      "orderNumber": "ORD12349",
+      "date": "2024-11-26",
+      "status": "Shipped",
+      "price": 13.99,
+      "rate": "Delicious, 77K Liked",
+      "img": "https://t4.ftcdn.net/jpg/06/47/73/53/360_F_647735365_pcuTRGfJa4Erc2tBzRlweCdxH3z1w4J9.jpg"
+    },
+    {
+      "id": "6",
+      "orderItem": "Sandwitch",
+      "orderNumber": "ORD12350",
+      "date": "2024-11-10",
+      "status": "Delivered",
+      "price": 13.99,
+      "rate": "MasterPiece, 37K Liked",
+      "img": "https://img.cdnx.in/260961/1666091323397_SKU-0103_0.jpg?format=webp"
+    },
+    {
+      "id": "7",
+      "orderItem": "Potato Chips",
+      "orderNumber": "ORD12351",
+      "date": "2024-12-22",
+      "status": "Delivered",
+      "price": 13.99,
+      "rate": "La-wabab",
+      "img": "https://pngimg.com/d/potato_chips_PNG58.png"
+    },
+    {
+      "id": "8",
+      "orderItem": "Cheese Burger",
+      "orderNumber": "ORD12352",
+      "date": "2024-11-05",
+      "status": "Pending",
+      "price": 13.99,
+      "rate": "Wonderful, 377M Liked",
+      "img": "https://www.superbread.com/assets/images/product/recipes/cheese-burger.webp"
+    },
+    {
+      "id": "9",
+      "orderItem": "Chicken Burger",
+      "orderNumber": "ORD12353",
+      "date": "2024-12-09",
+      "status": "Delivered",
+      "price": 13.99,
+      "rate": "Delicious, 377K Liked",
+      "img": "https://hips.hearstapps.com/hmg-prod/images/chicken-burgers-index-667b185b5f528.jpg?crop=0.500xw:1.00xh;0.282xw,0&resize=1200:*"
+    },
+    {
+      "id": "10",
+      "orderItem": "Creamy Kheer",
+      "orderNumber": "ORD12354",
+      "date": "2024-12-15",
+      "status": "Pending",
+      "price": 13.99,
+      "rate": "Delicious, 3K Liked",
+      "img": "https://i.ytimg.com/vi/7SnjCk46cR4/maxresdefault.jpg"
+    },
+    {
+      "id": "11",
+      "orderItem": "Chicken Kebab",
+      "orderNumber": "ORD12355",
+      "date": "2024-12-15",
+      "status": "Shipped",
+      "price": 13.99,
+      "rate": "La-wabab, 13k Liked",
+      "img": "https://img.freepik.com/free-photo/chicken-skewers-with-slices-sweet-peppers-dill_2829-18813.jpg?semt=ais_hybrid"
+    },
+    {
+      "id": "12",
+      "orderItem": "Veg Burger",
+      "orderNumber": "ORD12356",
+      "date": "2024-12-15",
+      "status": "Shipped",
+      "price": 13.99,
+      "rate": "Amazing, 13k Liked",
+      "img": "https://images.slurrp.com/prod/recipe_images/transcribe/snack/Vegetable-Burger.webp"
+    },
+    {
+      "id": "13",
+      "orderItem": "Lassi",
+      "orderNumber": "ORD12357",
+      "date": "2024-11-13",
+      "status": "Delivered",
+      "price": 13.99,
+      "rate": "Amazing, 13k Liked",
+      "img": "https://t3.ftcdn.net/jpg/04/81/51/96/360_F_481519662_1Vqr3aA1SvOPFa4YbGsOCTpYXcpCZYk5.jpg"
+    },
+    {
+      "id": "14",
+      "orderItem": "Pani Puri",
+      "orderNumber": "ORD12358",
+      "date": "2024-12-31",
+      "status": "Pending",
+      "price": 13.99,
+      "rate": "Outstanding, 22k Liked",
+      "img": "https://t3.ftcdn.net/jpg/04/94/92/18/360_F_494921881_UCVG7kgihpMUbbDC5VxuufeI7B5TQBr0.jpg"
+    },
+    {
+      "id": "15",
+      "orderItem": "Chicken Tikka",
+      "orderNumber": "ORD12359",
+      "date": "2024-11-10",
+      "status": "Delivered",
+      "price": 13.99,
+      "rate": "Nice, 21M Liked",
+      "img": "https://www.shutterstock.com/image-photo/deliciously-spiced-chicken-tikka-kabab-600nw-2495838045.jpg"
+    },
+    {
+      "id": "16",
+      "orderItem": "Ice-Cream",
+      "orderNumber": "ORD12360",
+      "date": "2024-12-10",
+      "status": "Shipped",
+      "price": 13.99,
+      "rate": "Sweet, 21M Liked",
+      "img": "https://cdn.pixabay.com/photo/2024/06/02/17/02/ice-cream-8804689_640.jpg"
+    },
+    {
+      "id": "17",
+      "orderItem": "Chicken Manchurian",
+      "orderNumber": "ORD12361",
+      "date": "2024-11-10",
+      "status": "Pending",
+      "price": 13.99,
+      "rate": "La-wabab, 100k Liked",
+      "img": "https://www.teaforturmeric.com/wp-content/uploads/2022/10/Chicken-Manchurian-10-500x375.jpg"
+    },
+    {
+      "id": "18",
+      "orderItem": "Bread",
+      "orderNumber": "ORD12362",
+      "date": "2024-11-10",
+      "status": "Shipped",
+      "price": 13.99,
+      "rate": "Wonderful, 367K Liked",
+      "img": "https://thumbs.dreamstime.com/b/bread-6894025.jpg"
+    },
+    {
+      "id": "19",
+      "orderItem": "Soup",
+      "orderNumber": "ORD12363",
+      "date": "2024-12-01",
+      "status": "Pending",
+      "price": 13.99,
+      "rate": "Nice, 21M Liked",
+      "img": "https://img.freepik.com/free-photo/top-view-delicious-autumn-soup-composition_23-2148634470.jpg"
+    },
+    {
+      "id": "20",
+      "orderItem": "Veg Biryani",
+      "orderNumber": "ORD12364",
+      "date": "2024-11-04",
+      "status": "Pending",
+      "price": 13.99,
+      "rate": "Nice, 29k Liked",
+      "img": "https://t3.ftcdn.net/jpg/07/46/36/34/360_F_746363489_cKc1NZY6wzJ7DHpGU8kn62KlVuvbPEku.jpg"
+    },
+    {
+      "id": "21",
+      "orderItem": "Chicken Biryani",
+      "orderNumber": "ORD12365",
+      "date": "2024-11-05",
+      "status": "Delivered",
+      "price": 13.99,
+      "rate": "Nice, 20M Liked",
+      "img": "https://static.vecteezy.com/system/resources/previews/028/536/608/non_2x/flavorful-feast-indulge-in-the-goodness-of-chicken-biryani-generative-ai-photo.jpg"
+    },
+    {
+      "id": "22",
+      "orderItem": "Egg Biryani",
+      "orderNumber": "ORD12366",
+      "date": "2024-11-06",
+      "status": "Shipped",
+      "price": 16.87,
+      "rate": "Amazing, 13k Liked",
+      "img": "https://palatesdesire.com/wp-content/uploads/2022/05/Egg-biryani-recipe@palates-desire.jpg"
+    },
+    {
+      "id": "23",
+      "orderItem": "Chowmin",
+      "orderNumber": "ORD12367",
+      "date": "2024-12-06",
+      "status": "Shipped",
+      "price": 13.99,
+      "rate": "Wonderful, 377M Liked",
+      "img": "https://i.pinimg.com/736x/37/77/a3/3777a38c1565dffd66800f39681007f7.jpg"
+    }
+  ]
+}

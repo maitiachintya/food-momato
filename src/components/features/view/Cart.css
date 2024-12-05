@@ -1,0 +1,162 @@
+/* Container for the entire cart page */
+.cart-page-container {
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+}
+
+/* Container for the cart title */
+.cart-title-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Title of the cart page */
+.cart-title {
+  margin-left: 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Cart items container */
+.cart-items-container {
+  margin-bottom: 20px;
+}
+
+/* Individual cart item container */
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  background-color: #fafafa;
+}
+
+/* Cart item details container */
+.cart-item-details {
+  display: flex;
+  align-items: center;
+}
+
+/* Cart item image */
+.cart-item-image {
+  width: 60px;
+  height: 60px;
+  margin-right: 15px;
+  object-fit: cover;
+}
+
+/* Information about the cart item */
+.cart-item-info {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Item name styling */
+.item-name {
+  font-weight: bold;
+  color: #333;
+}
+
+/* Item price styling */
+.item-price {
+  font-size: 14px;
+  color: #888;
+}
+
+/* Container for the quantity controls */
+.quantity-controls {
+  display: flex;
+  align-items: center;
+}
+
+/* Button styling for increment and decrement buttons */
+.quantity-btn {
+  margin: 0 10px;
+  padding: 8px 16px;
+}
+
+/* Remove button styling */
+.remove-btn {
+  margin-left: 20px;
+  color: #f44336; /* Red color */
+  font-size: 16px;
+}
+
+/* Cart summary container */
+.cart-summary {
+  padding-top: 20px;
+}
+
+/* Divider between items and summary */
+.MuiDivider-root {
+  margin-bottom: 15px;
+}
+
+/* Cart total section */
+.cart-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Checkout button styling */
+.checkout-btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  background-color: #4caf50; /* Green color */
+  color: white;
+  font-size: 16px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  &:hover {
+    background-color: #388e3c;
+  }
+}
+
+/* Clear Cart button styling */
+.clear-cart-btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  background-color: #f44336; /* Red color */
+  color: #fff;
+  font-size: 16px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  &:hover {
+    background-color: #d32f2f;
+  }
+}
+
+/* Empty cart message styling */
+.cart-empty-message {
+  text-align: center;
+  font-size: 18px;
+  color: #888;
+}
+
+/* Media Query for smaller screen sizes */
+@media (max-width: 768px) {
+  .cart-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .quantity-controls {
+    margin-top: 10px;
+  }
+
+  .cart-total {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

@@ -1,0 +1,85 @@
+/* Container for the entire login page */
+.login-page {
+    height: 100vh;
+    background-image: url("https://static.toiimg.com/thumb/msid-100825388,imgsize-1512741,width-900,height-1200,resizemode-6/100825388.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+  }
+  
+  /* Styling for the login paper box */
+  .login-paper {
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    transform: translateY(-50%);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 3;
+    width: 100%;
+    max-width: 400px;
+    background-color: white;
+    opacity: 0.9;
+  }
+  
+  /* Centered content in the login box */
+  .login-box {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  /* Styling for the food icon */
+  .food-icon {
+    font-size: 70px;
+    color: #ff6f61;
+    margin-bottom: 3rem;
+  }
+  
+  /* Heading text */
+  .login-heading {
+    font-weight: bold;
+    color: #ff6f61;
+    margin-bottom: 3rem;
+    font-size: 36px; /* Default size */
+  }
+  
+  @media (max-width: 600px) {
+    .login-heading {
+      font-size: 28px; /* Adjust for smaller screens */
+    }
+  }
+  
+  /* Input fields */
+  .input-field {
+    margin-bottom: 1rem;
+  }
+  
+  /* Styling for the submit button */
+  .submit-button {
+    padding: 12px;
+    font-size: 18px;
+    background-color: #ff6f61;
+  }
+  
+  .submit-button:hover {
+    background-color: #d45746;
+  }
+  
+  /* Error message styling */
+  .error-message {
+    margin-top: 1rem;
+    color: red;
+  }
+  
+  /* Signup link styling */
+  .signup-link {
+    margin-top: 1rem;
+  }
+  
+  .signup-link-text {
+    color: #ff6f61;
+  }
+  
