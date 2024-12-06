@@ -1,9 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { loginUser } from "../slice/AuthSlice"; // Adjust the path to the slice
-import { TextField, Button, Box, Typography, Paper } from "@mui/material";
+import {
+    TextField,
+    Button,
+    Box,
+    Typography,
+    Paper,
+    IconButton,
+    InputAdornment,
+    Snackbar,
+    Alert,
+} from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
-import { Fastfood } from "@mui/icons-material";
+import { Fastfood, Visibility, VisibilityOff } from "@mui/icons-material";
 import "./SignIn.css"; // Import the external CSS file
 
 function LoginPage() {
@@ -13,20 +23,24 @@ function LoginPage() {
     const [emailError, setEmailError] = useState("");
     const [passwordError, setPasswordError] = useState("");
     const [phoneError, setPhoneError] = useState("");
+    const [showPassword, setShowPassword] = useState(false); // State to toggle password visibility
+    const [openSnackbar, setOpenSnackbar] = useState(false); // Snackbar state
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const { loading, error, user } = useSelector((state) => state.users);
 
     // Regex patterns for stricter validation
-    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/; // Basic email validation
-    const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*()_+={}\[\]|\\:;<>?/~`]).{8,}$/; // Password should have at least 8 characters, 1 number, 1 letter, and 1 special character
-    const phoneRegex = /^[0-9]{10}$/; // Phone number should be 10 digits (basic validation)
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*()_+={}\[\]|\\:;<>?/~`]).{8,}$/;
+    const phoneRegex = /^[0-9]{10}$/;
 
-    // Redirect if user is already logged in
     useEffect(() => {
         if (user) {
-            navigate("/dashboard"); // Redirect to the dashboard or another page if logged in
+            setOpenSnackbar(true); // Show the success Snackbar
+            setTimeout(() => {
+                navigate("/dashboard"); // Redirect after a delay
+            }, 2000);
         }
     }, [user, navigate]);
 
@@ -52,7 +66,7 @@ function LoginPage() {
             setPasswordError("");
         }
 
-        // Phone validation (optional, but we add strict digit validation)
+        // Phone validation
         if (phone && !phoneRegex.test(phone)) {
             setPhoneError("Phone number must be 10 digits.");
             isValid = false;
@@ -64,6 +78,14 @@ function LoginPage() {
         if (isValid) {
             dispatch(loginUser({ email, password, phone }));
         }
+    };
+
+    const togglePasswordVisibility = () => {
+        setShowPassword((prev) => !prev);
+    };
+
+    const handleSnackbarClose = () => {
+        setOpenSnackbar(false);
     };
 
     return (
@@ -86,21 +108,36 @@ function LoginPage() {
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                             className="input-field"
-                            error={!!emailError} // Show error state if there's an error
-                            helperText={emailError} // Show error message
+                            error={!!emailError}
+                            helperText={emailError}
                         />
+
                         {/* Password Field */}
                         <TextField
                             label="Password"
-                            type="password"
+                            type={showPassword ? "text" : "password"} // Toggle between text and password
                             fullWidth
                             required
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                             className="input-field"
-                            error={!!passwordError} // Show error state if there's an error
-                            helperText={passwordError} // Show error message
+                            error={!!passwordError}
+                            helperText={passwordError}
+                            InputProps={{
+                                endAdornment: (
+                                    <InputAdornment position="end">
+                                        <IconButton
+                                            onClick={togglePasswordVisibility}
+                                            aria-label="toggle password visibility"
+                                            edge="end"
+                                        >
+                                            {showPassword ? <VisibilityOff /> : <Visibility />}
+                                        </IconButton>
+                                    </InputAdornment>
+                                ),
+                            }}
                         />
+
                         {/* Phone Field */}
                         <TextField
                             label="Phone (Optional)"
@@ -109,9 +146,10 @@ function LoginPage() {
                             value={phone}
                             onChange={(e) => setPhone(e.target.value)}
                             className="input-field"
-                            error={!!phoneError} // Show error state if there's an error
-                            helperText={phoneError} // Show error message
+                            error={!!phoneError}
+                            helperText={phoneError}
                         />
+
                         {/* Submit Button */}
                         <Button
                             variant="contained"
@@ -119,7 +157,7 @@ function LoginPage() {
                             fullWidth
                             className="submit-button"
                             type="submit"
-                            disabled={loading} // Disable button during loading
+                            disabled={loading}
                         >
                             {loading ? "Logging In..." : "Login & Order Now"}
                         </Button>
@@ -140,6 +178,18 @@ function LoginPage() {
                     </Typography>
                 </Box>
             </Paper>
+
+            {/* Success Snackbar */}
+            <Snackbar
+                open={openSnackbar}
+                autoHideDuration={2000}
+                onClose={handleSnackbarClose}
+                anchorOrigin={{ vertical: "top", horizontal: "center" }}
+            >
+                <Alert onClose={handleSnackbarClose} severity="success" sx={{ width: "100%" }}>
+                    Login Successful! Redirecting...
+                </Alert>
+            </Snackbar>
         </div>
     );
 }

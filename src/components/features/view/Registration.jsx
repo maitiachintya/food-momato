@@ -1,13 +1,26 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { registerUser } from "../slice/AuthSlice"; // Adjust the path to your slice
-import { TextField, Button, Box, Typography, Paper, CircularProgress } from "@mui/material";
+import { registerUser } from "../slice/AuthSlice";
+import {
+    TextField,
+    Button,
+    Box,
+    Typography,
+    Paper,
+    CircularProgress,
+    IconButton,
+    InputAdornment,
+    Snackbar,
+    Alert,
+} from "@mui/material";
+import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { NavLink, useNavigate } from "react-router-dom";
-import "./SignUp.css"; // Import external CSS
+import "./SignUp.css";
 
 function RegistrationPage() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [showPassword, setShowPassword] = useState(false);
     const [phone, setPhone] = useState("");
     const [fullName, setFullName] = useState("");
     const [emailError, setEmailError] = useState("");
@@ -15,10 +28,11 @@ function RegistrationPage() {
     const [phoneError, setPhoneError] = useState("");
     const [fullNameError, setFullNameError] = useState("");
     const [uniqueError, setUniqueError] = useState("");
+    const [successMessage, setSuccessMessage] = useState(false); // Snackbar state
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const { loading, error, users } = useSelector((state) => state.users); // Ensure users are included in the state
+    const { loading, error, users } = useSelector((state) => state.users);
 
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     const passwordRegex =
@@ -31,7 +45,6 @@ function RegistrationPage() {
         let isValid = true;
         setUniqueError("");
 
-        // Email validation
         if (!emailRegex.test(email)) {
             setEmailError("Please enter a valid email.");
             isValid = false;
@@ -39,7 +52,6 @@ function RegistrationPage() {
             setEmailError("");
         }
 
-        // Password validation
         if (!passwordRegex.test(password)) {
             setPasswordError(
                 "Password must be 8-20 characters long, include one uppercase letter, one lowercase letter, one number, and one special character."
@@ -49,7 +61,6 @@ function RegistrationPage() {
             setPasswordError("");
         }
 
-        // Phone validation
         if (phone && !phoneRegex.test(phone)) {
             setPhoneError("Phone number should be 10 digits.");
             isValid = false;
@@ -57,7 +68,6 @@ function RegistrationPage() {
             setPhoneError("");
         }
 
-        // Full name validation
         if (!fullNameRegex.test(fullName)) {
             setFullNameError("Full name should only contain alphabets and spaces.");
             isValid = false;
@@ -65,25 +75,28 @@ function RegistrationPage() {
             setFullNameError("");
         }
 
-        // Check if email already exists
         const emailExists = users?.some((user) => user.email === email);
         if (emailExists) {
             setUniqueError("This email is already registered. Please use another.");
             isValid = false;
         }
 
-        // If all validations pass, proceed to dispatch registration
         if (isValid) {
             dispatch(registerUser({ email, password, phone, fullName }))
                 .unwrap()
                 .then(() => {
-                    navigate("/login");
+                    setSuccessMessage(true); // Show success message
+                    setTimeout(() => navigate("/login"), 3000); // Redirect after 3 seconds
                 })
                 .catch((err) => {
                     console.error("Registration failed:", err);
                     setUniqueError("Something went wrong. Please try again.");
                 });
         }
+    };
+
+    const handleCloseSnackbar = () => {
+        setSuccessMessage(false);
     };
 
     return (
@@ -119,7 +132,7 @@ function RegistrationPage() {
                         />
                         <TextField
                             label="Password"
-                            type="password"
+                            type={showPassword ? "text" : "password"}
                             fullWidth
                             required
                             value={password}
@@ -127,6 +140,18 @@ function RegistrationPage() {
                             className="input-field"
                             error={!!passwordError}
                             helperText={passwordError}
+                            InputProps={{
+                                endAdornment: (
+                                    <InputAdornment position="end">
+                                        <IconButton
+                                            onClick={() => setShowPassword(!showPassword)}
+                                            edge="end"
+                                        >
+                                            {showPassword ? <VisibilityOff /> : <Visibility />}
+                                        </IconButton>
+                                    </InputAdornment>
+                                ),
+                            }}
                         />
                         <TextField
                             label="Phone (Optional)"
@@ -170,6 +195,17 @@ function RegistrationPage() {
                     </Typography>
                 </Box>
             </Paper>
+
+            {/* Success Snackbar */}
+            <Snackbar
+                open={successMessage}
+                autoHideDuration={3000}
+                onClose={handleCloseSnackbar}
+            >
+                <Alert onClose={handleCloseSnackbar} severity="success">
+                    Registration Successful! Redirecting to Login Page...
+                </Alert>
+            </Snackbar>
         </div>
     );
 }

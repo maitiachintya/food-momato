@@ -22,7 +22,7 @@ const Home = () => {
             navigate("/login");
         } else {
             // If logged in, you can proceed with the search or navigate to ViewOrder
-            navigate("/view-order");  // This will be your view order page
+            navigate("/view-order");  
         }
     };
 

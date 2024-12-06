@@ -12,6 +12,11 @@ import SearchIcon from "@mui/icons-material/Search";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import Button from "@mui/material/Button";
+import Drawer from "@mui/material/Drawer";
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import ListItemButton from "@mui/material/ListItemButton";
+import ListItemText from "@mui/material/ListItemText";
 import { styled, alpha } from "@mui/material/styles";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
@@ -57,9 +62,10 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function FoodOrderingNavbar() {
-    const [anchorEl, setAnchorEl] = React.useState(null);
+    const [anchorEl, setAnchorEl] = useState(null);
     const [searchQuery, setSearchQuery] = useState("");
-    const [cartCount, setCartCount] = useState(0); // Cart count state
+    const [cartCount, setCartCount] = useState(0);
+    const [drawerOpen, setDrawerOpen] = useState(false); // Drawer state
     const navigate = useNavigate();
 
     const handleProfileMenuOpen = (event) => {
@@ -77,15 +83,6 @@ export default function FoodOrderingNavbar() {
         }
     };
 
-    // Increment and decrement cart count functions
-    const handleIncrement = () => {
-        setCartCount((prev) => prev + 1);
-    };
-
-    const handleDecrement = () => {
-        setCartCount((prev) => (prev > 0 ? prev - 1 : 0));
-    };
-
     const menuId = "primary-search-account-menu";
 
     return (
@@ -96,8 +93,9 @@ export default function FoodOrderingNavbar() {
                         size="large"
                         edge="start"
                         color="inherit"
-                        aria-label="open drawer"
-                        sx={{ mr: 2, display: { xs: "block", md: "none" } }}
+                        aria-label="menu"
+                        sx={{ mr: 2 }}
+                        onClick={() => setDrawerOpen(true)}
                     >
                         <MenuIcon />
                     </IconButton>
@@ -105,39 +103,11 @@ export default function FoodOrderingNavbar() {
                         variant="h6"
                         noWrap
                         component="div"
-                        sx={{ display: { xs: "none", sm: "block" } }}
+                        sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
                     >
                         FOODIES
                     </Typography>
-                    <Box
-                        sx={{
-                            display: { xs: "none", md: "flex" },
-                            marginLeft: "auto",
-                            marginRight: "auto",
-                        }}
-                    >
-                        <Button color="inherit" sx={{ fontWeight: "bold" }}>
-                            <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
-                                Home
-                            </Link>
-                        </Button>
-                        <Button color="inherit" sx={{ fontWeight: "bold" }}>
-                            <Link to="/about" style={{ textDecoration: "none", color: "inherit" }}>
-                                About
-                            </Link>
-                        </Button>
-                        <Button color="inherit" sx={{ fontWeight: "bold" }}>
-                            <Link to="/contact" style={{ textDecoration: "none", color: "inherit" }}>
-                                Contact
-                            </Link>
-                        </Button>
-                        <Button color="inherit" sx={{ fontWeight: "bold" }}>
-                            <Link to="/service" style={{ textDecoration: "none", color: "inherit" }}>
-                                Services
-                            </Link>
-                        </Button>
-                    </Box>
-                    <form onSubmit={handleSearch}>
+                    <form onSubmit={handleSearch} style={{ flexGrow: 1 }}>
                         <Search>
                             <SearchIconWrapper>
                                 <SearchIcon />
@@ -151,31 +121,56 @@ export default function FoodOrderingNavbar() {
                         </Search>
                     </form>
                     <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
-                        <Button color="inherit" onClick={handleDecrement}>
-                            -
-                        </Button>
                         <IconButton size="large" color="inherit">
                             <Badge badgeContent={cartCount} color="error">
                                 <ShoppingCartIcon />
                             </Badge>
                         </IconButton>
-                        <Button color="inherit" onClick={handleIncrement}>
-                            +
-                        </Button>
+                        <IconButton
+                            size="large"
+                            edge="end"
+                            aria-label="account of current user"
+                            aria-controls={menuId}
+                            aria-haspopup="true"
+                            onClick={handleProfileMenuOpen}
+                            color="inherit"
+                        >
+                            <AccountCircle />
+                        </IconButton>
                     </Box>
-                    <IconButton
-                        size="large"
-                        edge="end"
-                        aria-label="account of current user"
-                        aria-controls={menuId}
-                        aria-haspopup="true"
-                        onClick={handleProfileMenuOpen}
-                        color="inherit"
-                    >
-                        <AccountCircle />
-                    </IconButton>
                 </Toolbar>
             </AppBar>
+            <Drawer anchor="left" open={drawerOpen} onClose={() => setDrawerOpen(false)}>
+                <Box
+                    sx={{ width: 250 }}
+                    role="presentation"
+                    onClick={() => setDrawerOpen(false)}
+                    onKeyDown={() => setDrawerOpen(false)}
+                >
+                    <List>
+                        <ListItem disablePadding>
+                            <ListItemButton component={Link} to="/">
+                                <ListItemText primary="Home" />
+                            </ListItemButton>
+                        </ListItem>
+                        <ListItem disablePadding>
+                            <ListItemButton component={Link} to="/about">
+                                <ListItemText primary="About" />
+                            </ListItemButton>
+                        </ListItem>
+                        <ListItem disablePadding>
+                            <ListItemButton component={Link} to="/contact">
+                                <ListItemText primary="Contact" />
+                            </ListItemButton>
+                        </ListItem>
+                        <ListItem disablePadding>
+                            <ListItemButton component={Link} to="/service">
+                                <ListItemText primary="Services" />
+                            </ListItemButton>
+                        </ListItem>
+                    </List>
+                </Box>
+            </Drawer>
             <Menu
                 anchorEl={anchorEl}
                 anchorOrigin={{

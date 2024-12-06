@@ -76,6 +76,41 @@
       "password": "Mahamed@7860",
       "phone": "",
       "fullName": "Moumita Ahamed"
+    },
+    {
+      "id": "571d",
+      "email": "moumita@4312gmail.com",
+      "password": "Maham@4356",
+      "phone": "",
+      "fullName": "Moumita Maiti"
+    },
+    {
+      "id": "3e3f",
+      "email": "achiti60@gmail.com",
+      "password": "Sonu@54321",
+      "phone": "",
+      "fullName": "Achintya Hazra"
+    },
+    {
+      "id": "d1e1",
+      "email": "pritamhazra@4531gmail.com",
+      "password": "Ppm@4351",
+      "phone": "",
+      "fullName": "Pritam Hazra"
+    },
+    {
+      "id": "e45b",
+      "email": "spatta@321gmail.com",
+      "password": "Spatta@321",
+      "phone": "",
+      "fullName": "Surajit Pattanayak"
+    },
+    {
+      "id": "5fd7",
+      "email": "raktim23@gmail.com",
+      "password": "Raktim@23",
+      "phone": "",
+      "fullName": "Raktim Pakhira"
     }
   ],
   "cart": [

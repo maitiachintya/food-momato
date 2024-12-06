@@ -36,11 +36,15 @@ const CartPage = ({ cart, setCart }) => {
         return cart.reduce((acc, item) => acc + item.quantity * item.price, 0).toFixed(2);
     };
 
+    const handleOrderNow = () => {
+        alert("Order placed successfully!");
+    };
+
     return (
         <div className="cart-page-container">
             <div className="cart-title-container">
                 <IconButton>
-                    <ShoppingCartIcon fontSize="large" color="primary" />
+                    <ShoppingCartIcon fontSize="large" style={{ color: "#FFA500" }} />
                 </IconButton>
                 <Typography variant="h4" className="cart-title">
                     Your Cart
@@ -70,7 +74,7 @@ const CartPage = ({ cart, setCart }) => {
                                 <Button
                                     size="small"
                                     variant="contained"
-                                    color="secondary"
+                                    style={{ backgroundColor: "#FFA500", color: "#fff" }}
                                     onClick={() => handleDecrement(item.id)}
                                     className="quantity-btn"
                                 >
@@ -80,7 +84,7 @@ const CartPage = ({ cart, setCart }) => {
                                 <Button
                                     size="small"
                                     variant="contained"
-                                    color="secondary"
+                                    style={{ backgroundColor: "#FFA500", color: "#fff" }}
                                     onClick={() => handleIncrement(item.id)}
                                     className="quantity-btn"
                                 >
@@ -88,9 +92,8 @@ const CartPage = ({ cart, setCart }) => {
                                 </Button>
                             </div>
 
-                            {/* Remove button */}
                             <IconButton
-                                color="error"
+                                style={{ color: "#FFA500" }}
                                 onClick={() => handleRemoveItem(item.id)}
                                 className="remove-btn"
                             >
@@ -103,15 +106,27 @@ const CartPage = ({ cart, setCart }) => {
                 <Typography>Your cart is empty.</Typography>
             )}
 
-            {/* All Clear Button */}
             {cart.length > 0 && (
                 <div className="cart-summary">
                     <Divider />
                     <div className="cart-total">
                         <Typography variant="h6">Total: ₹{calculateTotal()}</Typography>
                     </div>
-                    <Button variant="contained" color="secondary" onClick={handleClearCart} className="clear-cart-btn">
+                    <Button
+                        variant="contained"
+                        style={{ backgroundColor: "#FFA500", color: "#fff" }}
+                        onClick={handleClearCart}
+                        className="clear-cart-btn"
+                    >
                         Clear Cart
+                    </Button>
+                    <Button
+                        variant="contained"
+                        style={{ backgroundColor: "#FFA500", color: "#fff", marginTop: "10px" }}
+                        onClick={handleOrderNow}
+                        className="order-now-btn"
+                    >
+                        Order Now
                     </Button>
                 </div>
             )}
