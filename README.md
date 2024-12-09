@@ -7,7 +7,7 @@ https://github.com/user-attachments/assets/56febdb3-4623-4c6a-8a56-f602c80d3163
 ## Home Page
 The homepage includes a stylish header navbar with a logo, navigation links, and a responsive Login/Sign-Up button. A vibrant image carousel banner showcases dishes, promotional offers, and call-to-action buttons with smooth animations. Featured dishes are displayed in an interactive card section with images, descriptions, prices, and Order Now buttons. Customers can log in to access a seamless booking or ordering experience with category filters and cart management. The footer provides quick links, contact details, social media icons, and a professional design with a dark theme.
 ![Screenshot (184)](https://github.com/user-attachments/assets/64e75fba-32c5-4bdf-a2b3-2870fdb11d6e)
-![Screenshot (173)](https://github.com/user-attachments/assets/7802c1f8-2cbd-4044-b252-906e7c28f8bb)
+![Screenshot (185)](https://github.com/user-attachments/assets/36ae15aa-ef5f-450c-b9a8-6f9771a9be1f)
 ![Screenshot (174)](https://github.com/user-attachments/assets/cb3786b4-6ffe-4370-b07a-a2c144ea6c5f)
 
 ## About Page
